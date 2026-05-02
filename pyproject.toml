@@ -1,0 +1,18 @@
+[project]
+name = "pytest-testcontainer"
+version = "0.1.0"
+description = "Integration tests using pytest + testcontainers running ClickHouse."
+requires-python = ">=3.11"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "clickhouse-driver>=0.2.10",
+    "pytest>=9.0.3",
+    "testcontainers[clickhouse]>=4.14.2",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra -q"
+filterwarnings = ["ignore::DeprecationWarning"]
